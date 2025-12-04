@@ -8,6 +8,16 @@
 # ตัวแปร (Variables) 
 ตัวแปรคือชื่อที่ใช้เก็บข้อมูล (ค่าหรืออ้างอิงไปยังวัตถุ) ใน Python ตัวแปรผูกกับวัตถุและ Python เป็นภาษาแบบ dynamic typing — ไม่ต้องประกาศชนิดก่อน
 
+## พื้นฐานทั่วไป
+- คอมเมนต์
+  ```python
+  # บรรทัดเดียว
+  """
+  บล็อกคอมเมนต์ / docstring
+  """
+  ```
+- Indentation สำคัญ (ปกติ 4 ช่อง)
+
 ## การกำหนดค่า (Assignment)
 Syntax:
 ```python
@@ -43,6 +53,50 @@ s = str(123)
 b = bool(0)  # False
 ```
 
+## ตัวแปรและชนิดข้อมูล
+- ตัวอย่างชนิดพื้นฐาน: int, float, str, bool, None
+  ```python
+  x = 10          # int
+  y = 3.14        # float
+  s = "text"      # str
+  b = True        # bool
+  n = None        # ไม่มีค่า
+  ```
+- การแปลงชนิด
+  ```python
+  int("5"), float("3.2"), str(10), bool(0)
+  ```
+
+### รวม function
+- input
+    - .split(",") ถ้าไม่ใส่ parameter มันจะ split จากช่องว่าง 
+
+- output
+    - print(f'{variable}, {variable}')
+    - print("hello", "world!", sep=" + ", end='') 
+
+        sep=" + " -> ขั้นกลางด้วยอะไร
+
+        end='' -> ต่อท้ายอยากให้ทำไร กรณี end='' -> ไม่ขึ้นบรรทัดใหม่
+
+
+**code:**
+```py
+a, b, c = int(input('Enter coefficients a, b, c : ').split(",")) #แบบใช้ .split(",")
+print(a , b, c, sep=", ")
+
+name = input('Enter your name: ') #แบบ Basic
+print(f"name is: {name}")
+print("hello", "world!", sep=" + ", end='')
+```
+
+**output:**
+```py
+Enter coefficients a, b, c : 1,2,3
+a: 1, b: 2, c: 3
+hello + world!
+```
+
 ## ตรวจชนิด / ตรวจวัตถุ
 ```python
 type(x)         # คืนชนิดของวัตถุ
@@ -57,11 +111,10 @@ x += 3   # เทียบกับ x = x + 3
 x *= 2
 ```
 
-## ตัวแปรแบบคงที่ (Constants)
-Python ไม่มีตัวแปรคงที่จริง ๆ แต่ใช้ convention:
-```python
-PI = 3.14159
-MAX_RETRIES = 5
+if ย่อ
+```py
+number = 5
+if number > 0: print(number, '> 0')
 ```
 
 ## การลบตัวแปร
@@ -109,11 +162,7 @@ nums.append(4)   # nums => [1,2,3,4]
 - แปลงชนิดของ input ก่อนนำไปคำนวณ (input คืน str)
 - ตั้งชื่อตัวแปรให้สื่อความหมายเพื่อความชัดเจนของโค้ด
 
-## ควบคุมการไหลของโปรแกรม (Control structures) — สรุปจาก: https://docs.mikelopster.dev/c/python-series/101/control-structure
-
-ส่วนนี้ครอบคลุมวิธีควบคุมลำดับการทำงานของโปรแกรม เช่น เงื่อนไขและลูป พร้อม syntax และตัวอย่างสั้น ๆ
-
-### เงื่อนไข (if / elif / else)
+## เงื่อนไข (if / elif / else)
 Syntax:
 ```python
 if condition:
@@ -138,7 +187,7 @@ Expression แบบย่อ (ternary):
 result = "บวก" if x > 0 else "ไม่บวก"
 ```
 
-### ลูป for
+## ลูป for
 - ใช้ iterate กับ iterable ใด ๆ (list, tuple, dict, string, range ฯลฯ)
 - `range()` มักใช้สร้างลำดับตัวเลข
 
@@ -169,7 +218,7 @@ for k, v in d.items():    # key และ value
     print(k, v)
 ```
 
-### ลูป while
+## ลูป while
 Syntax:
 ```python
 while condition:
@@ -185,7 +234,7 @@ while i < 3:
 ```
 ระวัง infinite loop หากเงื่อนไขไม่มีการเปลี่ยนแปลง
 
-### break, continue, pass
+## break, continue, pass
 - break: ออกจากลูปทันที
 - continue: ข้ามรอบปัจจุบัน ไปทำรอบถัดไป
 - pass: ไม่ทำอะไร (placeholder)
@@ -200,7 +249,7 @@ for i in range(10):
     pass         # ที่นี่ยังคงไม่ทำอะไร
 ```
 
-### else กับลูป
+## else กับลูป
 ลูป (for/while) สามารถมี else ซึ่งจะรันเมื่อไม่มีการจบลูปด้วย break:
 ```python
 for i in range(3):
@@ -209,26 +258,71 @@ else:
     print("จบโดยไม่มี break")
 ```
 
-### Comprehensions (การย่อการสร้างลิสต์/เซ็ต/ดิกชันนารี)
-- List comprehension:
-```python
-squares = [x*x for x in range(5)]
-evens = [x for x in range(10) if x % 2 == 0]
-```
-- Dict/set comprehension:
-```python
-d = {x: x*x for x in range(5)}
-s = {x for x in range(5)}
-```
-- Generator expression (ไม่สร้างรายการในหน่วยความจำทันที):
-```python
-g = (x*x for x in range(5))
-```
+## Comprehensions และ enumerate 
 
-### แนวทางปฏิบัติ
-- เลือกใช้ for เมื่อรู้จำนวนรอบหรือ iterate บน iterable, ใช้ while เมื่อเงื่อนไขขึ้นกับสถานะที่เปลี่ยนแปลง
-- ใช้ enumerate/zip แทนการจัดการดัชนีด้วยตัวเอง
-- ใช้ comprehensions เพื่อโค้ดที่กระชับและอ่านง่าย แต่หลีกเลี่ยง comprehension ที่ซับซ้อนเกินไป
+- Comprehension คือวิธีเขียนลูปสร้าง collection แบบย่อ (กระชับ และมักอ่านง่าย)  
+  - ใช้ได้กับ list, set, dict และ generator expression
+
+  ตัวอย่าง:
+  ```python
+  # List comprehension
+  # syntax
+  [ expression for item in iterable if condition ]
+  squares = [x*x for x in range(10)]            # [0,1,4,...,81]
+
+  # มีเงื่อนไข
+  evens = [x for x in range(20) if x % 2 == 0]  # [0,2,4,...,18]
+
+  # Dict comprehension
+  # syntax
+  { key_expr: value_expr for item in iterable if condition }
+  square_map = {x: x*x for x in range(5)}       # {0:0,1:1,2:4,3:9,4:16}
+
+  # Set comprehension
+  uniq = {len(s) for s in ["a","ab","abc","ab"]}# {1,2,3}
+
+  # Generator expression (lazy evaluation)
+  g = (x*x for x in range(10))
+  for v in g:
+      print(v)
+  ```
+
+  ข้อควรระวัง:
+  - หลีกเลี่ยง comprehension ที่ซับซ้อนเกินไป (nested หลายชั้น) เพื่อความอ่านง่าย
+  - หากต้องการ side-effects หรือขั้นตอนหลายบรรทัด ให้ใช้ฟังก์ชัน/ลูปปกติ
+
+- enumerate() คือฟังก์ชันที่คืนคู่ (index, value) เมื่อวนซ้ำบน iterable — สะดวกเมื่อต้องการทั้งดัชนีและค่า
+  ตัวอย่าง:
+  ```python
+  fruits = ["apple", "banana", "cherry"]
+
+  # แบบปกติ (index เริ่มที่ 0)
+  enumerate(iterable, start=0)
+  # คืน iterator ของ (index, value)
+  
+  for i, v in enumerate(fruits):
+      print(i, v)
+  # ผลลัพธ์:
+  # 0 apple
+  # 1 banana
+  # 2 cherry
+
+  # กำหนด start ให้ index เริ่มที่ 1
+  for idx, val in enumerate(fruits, start=1):
+      print(idx, val)
+  # 1 apple, 2 banana, 3 cherry
+
+  # รวมกับ zip
+  a = [10,20,30]; b = ['x','y','z']
+  for i, (n, ch) in enumerate(zip(a, b), start=1):
+      print(i, n, ch)
+  ```
+
+- ตัวอย่างรวม: สร้าง list ของ tuple (index, square) โดยใช้ enumerate + list comprehension
+  ```python
+  squares_with_index = [(i, x*x) for i, x in enumerate(range(5))]
+  # [(0,0),(1,1),(2,4),(3,9),(4,16)]
+  ```
 
 ## การรับค่า (Input) 
 
@@ -273,3 +367,6 @@ g = (x*x for x in range(5))
   - input() คืน str เสมอ ต้องแปลงก่อนนำไปคำนวณ
   - สำหรับข้อมูลจำนวนมากหรือการรับเร็ว ใช้ sys.stdin.readline()
   - ใช้ map() กับ int/float เพื่อโค้ดกระชับและเร็วขึ้น
+   - ```.strip()```: ใช้ลบ Whitespace (ช่องว่าง, tab,newline) ที่ส่วนหัวและท้ายของสตริง
+ - ```.replace(old, new)``` แทนที่ old substring ด้วย new substring
+ - ```.find(text)``` คืน index ของคำที่พบ
