@@ -189,7 +189,8 @@ result = "บวก" if x > 0 else "ไม่บวก"
 
 ## ลูป for
 - ใช้ iterate กับ iterable ใด ๆ (list, tuple, dict, string, range ฯลฯ)
-- `range()` มักใช้สร้างลำดับตัวเลข
+- `range(start,step,stop)` มักใช้สร้างลำดับตัวเลข
+- default start = 0 & step = 1 ต้องกำหนด stop ถ้ามีการกำหนดค่ามาจะเป็น Stop โดยทันที
 
 ตัวอย่าง:
 ```python
