@@ -1,0 +1,1 @@
+watch: [Basic Data](https://www.youtube.com/watch?v=jndyfeo2hUc&list=PLwZ0y9k-cYXALFTl5X2A3IPNTyK-9vm-v&index=5)

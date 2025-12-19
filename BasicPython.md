@@ -1,5 +1,7 @@
-## Intro
+# Intro
 [Python คืออะไร / ภาษา Python ใช้ทำอะไรได้บ้าง / วิธีลงไพทอน](https://docs.mikelopster.dev/c/python-series/101/intro)
+
+watch: [Basic Python](https://www.youtube.com/watch?v=ESNFhgRqeow&list=PLwZ0y9k-cYXALFTl5X2A3IPNTyK-9vm-v&index=6)
 
 สามารถรัน Python ได้ 2 วิธี :
 1. พิมใน Terminal => python (..ชื่อไฟล์..)
@@ -371,3 +373,64 @@ else:
    - ```.strip()```: ใช้ลบ Whitespace (ช่องว่าง, tab,newline) ที่ส่วนหัวและท้ายของสตริง
  - ```.replace(old, new)``` แทนที่ old substring ด้วย new substring
  - ```.find(text)``` คืน index ของคำที่พบ
+
+
+## Tuple
+
+> **Tuple** คือโครงสร้างข้อมูลประเภทหนึ่งในภาษา Python ที่ใช้เก็บข้อมูลหลายรายการไว้ในตัวแปรเดียว Tuple มีลักษณะคล้ายกับ List      
+>แต่มีความแตกต่างที่สำคัญคือ
+**Tuple ไม่สามารถแก้ไขได้** (**immutable**)
+เมื่อสร้างขึ้นแล้ว
+
+## คุณสมบัติหลักของ Tuple
+
+1.  **มีลำดับ (Ordered)**: สมาชิกใน Tuple จะถูกจัดเก็บตามลำดับที่เรากำหนด และสามารถเข้าถึงได้ผ่านดัชนี (index)
+2.   **ไม่สามารถเปลี่ยนแปลงได้ (Immutable)**: นี่คือความแตกต่างที่สำคัญที่สุด เมื่อ Tuple ถูกสร้างขึ้น เราไม่สามารถเพิ่ม ลบ หรือแก้ไขสมาชิกภายในได้
+3. **ยอมรับค่าซ้ำ (Allows Duplicates)**: สามารถมีสมาชิกที่มีค่าซ้ำกันได้
+4. **เก็บข้อมูลได้หลากหลายชนิด (Heterogeneous)**: สามารถเก็บข้อมูลต่างชนิดกันได้ เช่น ตัวเลข, ข้อความ, หรือ List
+
+## การสร้าง Tuple
+
+**การสร้าง Tuple โดยใช้วงเล็บ ()**
+> สามารถสร้าง Tuple ได้โดยการนำสมาชิกมาใส่ไว้ในวงเล็บ () และคั่นด้วยเครื่องหมายจุลภาค , (comma)
+
+\`\`\`python
+### ตัวอย่างการสร้าง Tuple
+my_tuple = ("apple", "banana", "cherry", 123)
+
+### การสร้าง Tuple ที่มีสมาชิกเพียงตัวเดียว ต้องมีเครื่องหมายจุลภาคต่อท้าย
+single_tuple = ("hello",)
+print(type(single_tuple))
+\`\`\`
+
+**การสร้าง Tuple โดยใช้ \`tuple()\` constructor**
+
+**\`tuple()\`** constructor เป็นฟังก์ชันที่ใช้สร้าง Tuple โดยรับ iterable (เช่น List, String, หรือ Tuple อื่นๆ) เป็นอาร์กิวเมนต์ ตัวอย่างเช่น
+
+\`\`\`python
+# ใช้ tuple() constructor เพื่อสร้าง Tuple จาก List หรือ iterable อื่นๆ
+tuple_constructor = tuple(['Jack', 'Maria', 'David'])
+print(tuple_constructor)
+
+**ผลลัพธ์: ('Jack', 'Maria', 'David')**
+\`\`\`
+
+**Tuple ว่าง (Empty Tuple)**
+
+> สามารถสร้าง Tuple ที่ไม่มีสมาชิกได้โดยใช้เพียงวงเล็บเปล่า **\`()\`** หรือใช้ **\`tuple()\`** constructor ที่ไม่มีอาร์กิวเมนต์
+
+\`\`\`python
+### สร้าง Tuple ว่าง
+empty_tuple = ()
+print(empty_tuple)
+### ผลลัพธ์: ()
+\`\`\`
+
+
+## Lab4 - Examples
+
+### Lab4_Q1: CUT and SHUFFLE Operations
+See file: [lab4_q1](Homework/week4/lab4_q1.py)
+
+### Lab4_Q2: List Comprehension with Tuples
+See file: [lab4_q2](Homework/week4/lab4_q2.py)
