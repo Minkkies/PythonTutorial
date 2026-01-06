@@ -71,8 +71,3 @@
 - ใช้ enumerate เมื่อต้องการ index ในลูป
 - ใช้ zip เมื่อต้องเดินบนสองลิสต์พร้อมกัน
 
----
-
-## ไฟล์ที่เกี่ยวข้อง
-- BasicPython.md — บันทึกพื้นฐาน (string methods, comprehension, zip, enumerate)
-- week2/README.md — เทคนิกจาก Week 2 (input parsing, loops, functions)
