@@ -80,37 +80,6 @@ week5/
 - ✅ การ import
 - ✅ `if __name__ == "__main__":` pattern
 
-## 🚀 วิธีรันโปรแกรม
-
-### Lab 5
-```bash
-# Lab 5.1
-python lab5_q1.py
-
-# Lab 5.2
-python lab5_q2.py
-
-# Lab 5.3
-python lab5_q3.py
-```
-
-### Lab 6
-```bash
-# Lab 6.1
-cd lab6_q1
-python main.py
-
-# Lab 6.2
-cd lab6_q2
-python main.py
-
-# Lab 6.3
-cd lab6_q3
-python main.py
-# หรือ
-python converter.py  # รัน test mode
-```
-
 ---
 
 ## 📚 กฎสำคัญ
@@ -126,4 +95,3 @@ python converter.py  # รัน test mode
 3. **Python Package ต้องมี `__init__.py`** - แม้ว่าจะเป็นไฟล์ว่างก็ตาม
 
 4. **Docstring Format:** ใช้ Google Style หรือ NumPy Style เพื่อให้ IDE แสดง parameter description
-

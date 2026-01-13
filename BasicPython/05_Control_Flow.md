@@ -179,6 +179,10 @@ while count < 5:
     count += 1
 ```
 
+><span style="color:red;"><b>ข้อควรระวัง: </b></span>
+>ถ้าไม่ได้ใช้ range หรือ enumerate
+>ตัวแปรใน for จะเป็น “ค่าจริง” ที่อยู่ใน iterable ไม่ใช่ index
+
 ## คำสั่งควบคุมลูป (break, continue, pass)
 
 ### break

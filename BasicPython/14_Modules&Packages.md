@@ -1,4 +1,4 @@
-# 10. Python Modules & Packages (โมดูลและแพคเกจ)
+# 14. Python Modules & Packages (โมดูลและแพคเกจ)
 
 ## Module คืออะไร?
 > **Module** คือไฟล์ Python (`.py`) ที่มีโค้ด Python ซึ่งสามารถนำเข้า (import) และใช้งานในโปรแกรมอื่น ๆ ได้  
