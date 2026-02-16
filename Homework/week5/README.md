@@ -54,16 +54,28 @@ week5/
 
 **คำอธิบาย:** Module สำหรับจัดการข้อความ
 
+**ไฟล์:**
+- `main.py` - โปรแกรมหลัก
+- `text_utils.py` - Module ที่มีฟังก์ชัน count_words, reverse_text, capitalize_words
+
 ### **Lab 6.2 - E-commerce Cart Package**
 **โฟลเดอร์:** [lab6_q2/](lab6_q2/)
 
 **คำอธิบาย:** Package จัดการตะกร้าสินค้า
 
+**ไฟล์:**
+- `main.py` - โปรแกรมทดสอบ
+- `ecommerce/__init__.py` - Package initializer
+- `ecommerce/cart.py` - ShoppingCart class
 
 ### **Lab 6.3 - Unit Converter Module**
 **โฟลเดอร์:** [lab6_q3/](lab6_q3/)
 
 **คำอธิบาย:** Module แปลงหน่วย
+
+**ไฟล์:**
+- `main.py` - โปรแกรมทดสอบ
+- `converter.py` - ฟังก์ชันแปลงหน่วยอุณหภูมิและระยะทาง
 
 ## 🎯 สิ่งที่ได้เรียนรู้
 
