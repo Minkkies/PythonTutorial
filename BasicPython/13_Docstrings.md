@@ -80,7 +80,8 @@ print(calculate_stats(5, 5))
 print(calculate_stats())
 ```
 มันจะแสดงเมื่อเอาเม้าส์ไปจ่อที่ฟังก์ชั่น
-![docstring1](../img/docstring1.png)
+
+![docstring1](./img/docstring1.png)
 ### กฎพื้นฐาน:
 1. ใช้ triple quotes `"""` (ทั้งแม้ว่า one-liner)
 2. บรรทัดแรกต้องเป็นบรรทัดสรุป (summary) ที่สั้นและชัดเจน
