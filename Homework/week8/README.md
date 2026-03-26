@@ -30,7 +30,7 @@ pip install requests beautifulsoup4 pandas
 
 ## 📝 Lab Tasks
 
-### Task 1: Requests - ส่งคำขอ HTTP
+### Task 1: Requests - ส่งคำขอ HTTPm
 ```python
 import requests
 
